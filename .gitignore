@@ -1,0 +1,44 @@
+# ---- Python virtual environments ----
+venv/
+.venv/
+env/
+.env/          # if someone names it this
+*.conda        # Conda-packed env archives
+
+# ---- Python byte-code & cache ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Package build artifacts ----
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ---- Logs & coverage ----
+*.log
+.coverage
+coverage.xml
+htmlcov/
+
+# ---- IDE / Editor settings ----
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ---- OS generated files ----
+.DS_Store
+Thumbs.db
+
+# ---- Environment / secrets ----
+.env
+.env.*
+*.pem
+*.key
