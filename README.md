@@ -33,26 +33,3 @@ flowchart LR
     end
     WS & FA --> C
     C -->|Stream<br/>Markdown| U[User]
-
----
-
-## ⚡ Quick Start
-
-# 1) Clone
-git clone https://github.com/Dumidu1212/agentic_ai_financial_agent.git
-cd agentic-ai-finance-agent
-
-# 2) Create virtualenv
-python -m venv .venv
-source .venv/bin/activate          # (PowerShell) .venv\Scripts\Activate.ps1
-
-# 3) Install deps
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-
-# 4) Configure secrets
-cp .env.example .env
-$EDITOR .env                       # paste your GROQ_API_KEY here
-
-# 5) Run a sample query
-python scripts/quick_demo.py
