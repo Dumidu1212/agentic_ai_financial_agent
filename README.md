@@ -5,15 +5,16 @@
 ---
 
 ## ✨ Features
-| Capability           | Details                                                                                                           |
-|----------------------|-------------------------------------------------------------------------------------------------------------------|
-| **Web Search Agent** | Fetches fresh articles via DuckDuckGo and returns answers with clickable citations.                               |
-| **Finance Agent**    | Pulls quotes, fundamentals, analyst recommendations, and news from Yahoo Finance via `YFinanceTools`.             |
-| **Coordinator**      | Orchestrates both specialists to deliver richer answers in a single response.                                     |
-| **Streaming Output** | Responses stream token-by-token for a snappy user experience.                                                     |
-| **Markdown Tables**  | Numerical data (prices, ratios, etc.) are auto-formatted into tidy tables.                                        |
-| **SQLite Memory**    | Optional long-term conversation storage with `SqliteStorage`.                                                     |
-| **FastAPI Playground** | Comes with a ready-to-run browser UI for interactive exploration.                                               |
+
+| Capability | Details |
+|------------|---------|
+| **Web Search Agent** | Queries DuckDuckGo, returns concise answers with clickable citations. |
+| **Finance Agent** | Pulls live quotes, fundamentals, analyst calls, and company news from Yahoo Finance. |
+| **Coordinator Agent** | Orchestrates both specialised agents for richer multi-modal answers. |
+| **Streaming** | Responses appear token-by-token for snappy UX. |
+| **Tabular Output** | Numerical data is formatted in Markdown tables out-of-the-box. |
+| **Persistent Memory** | Optional SQLite storage remembers previous chats. |
+| **FastAPI Playground** | Beautiful web UI for interactive exploration. |
 
 ---
 
@@ -21,9 +22,14 @@
 
 ```mermaid
 flowchart LR
-    U([User Prompt]) --> C{{Coordinator Agent}}
-    C --|delegates|--> WS[Web Search Agent]
-    C --|delegates|--> FA[Finance Agent]
-    WS --> DDG[DuckDuckGo]
-    FA --> YF[Yahoo Finance]
-    C --|stream|--> R[Response (tables & citations)]
+    A[User Prompt] --> C(Multimodal<br/>Coordinator Agent)
+    C -- delegates --> WS[Web Search Agent]
+    C -- delegates --> FA[Finance Agent]
+    WS -->|DuckDuckGo API| DDG[🌐 Web]
+    FA -->|YahooFinance| YF[📈 Market&nbsp;Data]
+    subgraph Tools
+        DDG
+        YF
+    end
+    WS & FA --> C
+    C -->|Stream<br/>Markdown| U[User]
