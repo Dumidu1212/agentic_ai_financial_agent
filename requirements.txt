@@ -1,4 +1,4 @@
-phidata
+agno
 python-dotenv
 yfinance
 packaging
@@ -7,3 +7,6 @@ fastapi
 uvicorn
 groq
 openai
+sqlalchemy
+fastapi
+python-multipart
