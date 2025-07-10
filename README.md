@@ -38,7 +38,7 @@ flowchart LR
 
 ## ⚡ Quick Start
 
-```bash
+```
 # 1) Clone the repo
 git clone https://github.com/Dumidu1212/agentic_ai_financial_agent.git
 cd agentic-ai-finance-agent
