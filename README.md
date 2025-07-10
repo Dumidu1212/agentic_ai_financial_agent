@@ -4,6 +4,14 @@
 
 ---
 
+## 📚 Contents
+
+- [✨ Features](#-features)
+- [🏗️ Architecture](#️-architecture)
+- [⚡ Quick Start](#-quick-start)
+
+---
+
 ## ✨ Features
 
 | Capability            | Details                                                                                                   |
@@ -57,3 +65,4 @@ $EDITOR .env                       # paste your GROQ_API_KEY here
 
 # 5) Run a sample query
 python scripts/quick_demo.py
+```
